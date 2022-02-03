@@ -13,7 +13,13 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-  	body {font-family: 'Nunito', sans-serif;};
+
+    body {
+      font-family: 'Nunito', sans-serif;
+    }
+
+    ;
+
     nav.navbar {
       height: 6rem !important;
       box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06) !important;
@@ -22,8 +28,8 @@
 </head>
 
 <body>
-  <!-- START NAV -->
-  <nav class="navbar">
+<!-- START NAV -->
+<nav class="navbar">
     <div class="container">
       <div class="navbar-brand">
         <!-- <a class="navbar-item" href="../">
@@ -46,13 +52,13 @@
               </span>
             </div>
           </div>
-          <a class="navbar-item is-active is-size-5 has-text-weight-semibold" href="../index.html">
+          <a class="navbar-item is-active is-size-5 has-text-weight-semibold" href="index.php?page=home">
             <i class="fas fa-home"></i>
-             Home
+            Home
           </a>
-          <a class="navbar-item is-size-5 has-text-weight-semibold">
+          <a class="navbar-item is-size-5 has-text-weight-semibold" href="index.php?page=post">
             <i class="fas fa-plus"></i>
-             Post
+            Post
           </a>
           <a class="navbar-item is-size-5 has-text-weight-semibold">
             <i class="fas fa-user-circle"></i>
@@ -62,40 +68,3 @@
     </div>
   </nav>
   <!-- END NAV -->
-
-  <section class="section" id="section">
-    <div class="columns">
-        <div class="column is-half is-offset-one-quarter">
-            <h1>Add a post</h1>
-            <form class="box">
-                <div class="field">
-                  <label class="label">Email</label>
-                  <div class="control">
-                    <input class="input" type="email" placeholder="e.g. alex@example.com">
-                  </div>
-                </div>
-              
-                <div class="field">
-                  <label class="label">Password</label>
-                  <div class="control">
-                    <input class="input" type="password" placeholder="********">
-                  </div>
-                </div>
-              
-                <button class="button is-primary">Sign in</button>
-              </form>
-        </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p>
-        <strong>FacebookCFPT</strong> by Aurélien Boyer.
-      </p>
-    </div>
-  </footer>
-  <script src="https://kit.fontawesome.com/c8bd6fbb3e.js" crossorigin="anonymous"></script>
-</body>
-
-</html>
