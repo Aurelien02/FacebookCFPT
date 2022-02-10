@@ -27,7 +27,7 @@
       <!-- RIGHT SIDE -->
       <div class="column">
         <div class="box" style="text-align: center;">
-          <b>Welcome !</b>
+          <b>Bienvenue !</b>
         </div>
       </div>
     </div>
