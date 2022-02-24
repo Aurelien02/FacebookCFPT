@@ -16,6 +16,7 @@ switch ($page) {
         break;
         case "post":
             require("./Views/post.php");
+            require_once ("./Controllers/addPost_controller.php");
         break;
 }
 

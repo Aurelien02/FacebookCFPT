@@ -1,7 +1,4 @@
-<?php
-require_once ("./Controllers/addPost_controller.php");
-?>
- <section class="section" id="section">
+<section class="section" id="section">
    <div class="columns">
      <div class="column is-half is-offset-one-quarter">
        <h1>Ajouter un poste</h1>
@@ -9,7 +6,7 @@ require_once ("./Controllers/addPost_controller.php");
          <div class="field">
            <label class="label">Commentaire</label>
            <div class="control">
-             <input class="input" type="textarea" id="commentary" name="commnentary">
+             <input class="input" type="textarea" id="commentary" name="commentary">
            </div>
          </div>
 

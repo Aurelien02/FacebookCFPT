@@ -1,6 +1,6 @@
 <?php
-namespace FacebookCFPT\model;
-require_once 'dbinfos.php';
+namespace FacebookCFPT\models;
+require_once 'dbInfos.php';
 //use Exception;
 
 //session_start();

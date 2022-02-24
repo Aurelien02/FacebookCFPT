@@ -1,8 +1,10 @@
 <?php
 
-use FacebookCFPT\model\postDAO;
+require_once ("./Models/postDAO.php");
 
-$commentary = filter_input(INPUT_POST, "commentary", FILTER_SANITIZE_STRING);
+use FacebookCFPT\models\postDAO;
+
+$commentary = filter_input(INPUT_POST, 'commentary', FILTER_SANITIZE_STRING);
 
 /* dans $_FILES : files
 - name
@@ -34,7 +36,7 @@ for($i = 0; $i< $arrayLength; $i++){
 
 $dir;
 $dirFile;
-$dir = "../img/";
+$dir = "./img/";
 foreach ($fileArray as $file) {
     $dirFile = $dir . $file[0];
     if (file_exists($dirFile)) {
@@ -45,11 +47,12 @@ foreach ($fileArray as $file) {
 
 
 if($AllImageSize <= 70000000){
-    foreach($fileArray as $file){
-        /**
-         *  TODO: ajouter l'id du post comme parametre de la requete
-         */
-        postDAO::addImage($file[0], $file[1]);
+    if(!empty($commentary)){
+        postDAO::addPost($commentary);
+        $lastId = postDAO::selectLastId();
+        foreach($fileArray as $file){
+            postDAO::addImage($file[0], $file[1],$lastId[0]);
+        }
     }
 }else{
 
