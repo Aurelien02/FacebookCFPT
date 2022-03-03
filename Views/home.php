@@ -29,6 +29,7 @@
         <div class="box" style="text-align: center;">
           <b>Bienvenue !</b>
         </div>
+        
       </div>
     </div>
   </section>

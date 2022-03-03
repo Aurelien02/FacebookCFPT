@@ -1,3 +1,9 @@
+<?php
+$msg; 
+  if(isset($_SESSION['error'])){
+    $msg = $_SESSION['error'];
+  }
+?>
 <section class="section" id="section">
    <div class="columns">
      <div class="column is-half is-offset-one-quarter">
@@ -20,6 +26,7 @@
          </div>
 
          <button class="button is-primary">Ajouter</button>
+         <span><?= $msg?></span>
        </form>
      </div>
    </div>
