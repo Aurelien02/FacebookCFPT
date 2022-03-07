@@ -36,8 +36,6 @@ for($i = 0; $i< $arrayLength; $i++){
         array_push($arrayTemp,$_FILES["files"]["tmp_name"][$i]);
         array_push($fileArray,$arrayTemp);
         $AllImageSize += $_FILES["files"]["size"][$i];
-        /* array_push($filesName,$_FILES["files"]["name"][$i]);
-        array_push($filesSize,$_FILES["files"]["size"][$i]); */
     }
     else{
         if($_FILES["files"]["error"][$i] == 1){
@@ -49,6 +47,7 @@ for($i = 0; $i< $arrayLength; $i++){
     }
 }
 
+//ajoute les médias dans le dossier image
 if($errorMsg == ""){
     $dir;
     $dirFile;
@@ -70,15 +69,20 @@ if($errorMsg == ""){
         if(!empty($commentary)){
             $db = DBConnection::getConnection();
             try{
+                //Début transaction
                 $db->beginTransaction();
+                //ajout du post
                 postDAO::addPost($commentary);
+                //récupère le dernier id de post ajouté
                 $lastId = postDAO::selectLastId();
-                foreach($fileArray as $file){
+                foreach($fileArray as $file){ // ajoute chaques images sélectionnées par l'utilisateur 
                     mediaDAO::addImage( $file[1], $file[0], $lastId[0][0]);
                 }
+                //validation de la transaction
                 $db->commit();
                 header("Location: index.php?page=home");
             } catch (\PDOException $e){
+                //annulation de la transaction
                 $db->rollback();
                 $errorMsg = "une erreur c'est produite";
             }
