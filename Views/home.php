@@ -1,3 +1,8 @@
+  <?php
+  
+  require_once("./Controllers/showPost_controller.php");
+  
+  ?>
   <section class="section" id="section">
     <div class="columns">
       <!-- LEFT SIDE -->
@@ -29,7 +34,11 @@
         <div class="box" style="text-align: center;">
           <b>Bienvenue !</b>
         </div>
-        
+        <div id="posts" >
+          <?php
+          showPost();
+          ?>
+        </div>
       </div>
     </div>
   </section>
