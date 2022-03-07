@@ -31,7 +31,12 @@ function showPost(){
           </figure></div></div>";
         }
         $NamesMedias = array();
-        $result .= "</div></div><br>";
+        $result .= "</div>
+        <button class='button is-info'>
+        Modifier
+        </button>
+        <button class='button is-danger'>Supprimer</button>
+        </div><br>";
     }
     echo($result);
 }
