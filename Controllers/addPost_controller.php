@@ -1,8 +1,10 @@
 <?php
 
+require_once ("./Models/dbConnection.php");
 require_once ("./Models/postDAO.php");
 require_once ("./Models/mediaDAO.php");
 
+use FacebookCFPT\models\DBConnection;
 use FacebookCFPT\models\postDAO;
 use FacebookCFPT\models\mediaDAO;
 
@@ -15,7 +17,7 @@ $commentary = filter_input(INPUT_POST, 'commentary', FILTER_SANITIZE_STRING);
 - error
 - size
 */
-//var_dump($_FILES["files"]["name"]);
+
 $_SESSION['error'] = "";
 $arrayLength = count($_FILES["files"]["name"]);
 $fileArray = array();
@@ -66,12 +68,20 @@ if($errorMsg == ""){
 
     if($moveUploadedFileOk == true){
         if(!empty($commentary)){
-            postDAO::addPost($commentary);
-            $lastId = postDAO::selectLastId();
-            foreach($fileArray as $file){
-                mediaDAO::addImage( $file[1], $file[0], $lastId[0][0]);
+            $db = DBConnection::getConnection();
+            try{
+                $db->beginTransaction();
+                postDAO::addPost($commentary);
+                $lastId = postDAO::selectLastId();
+                foreach($fileArray as $file){
+                    mediaDAO::addImage( $file[1], $file[0], $lastId[0][0]);
+                }
+                $db->commit();
+                header("Location: index.php?page=home");
+            } catch (\PDOException $e){
+                $db->rollback();
+                $errorMsg = "une erreur c'est produite";
             }
-            header("Location: index.php?page=home");
         }
     }else{
 
