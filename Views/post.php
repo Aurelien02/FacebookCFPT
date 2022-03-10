@@ -19,10 +19,6 @@ $msg;
          <div class="field">
            <!-- <input type="file" name="files[]" accept="image/jpeg, image/png, image/gif" multiple> -->
            <input type="file" name="files[]"  multiple>
-           <!-- <label class="label">Add images</label>
-                  <div class="control">
-                    <input class="input" type="password" placeholder="********">
-                  </div> -->
          </div>
 
          <button class="button is-primary">Ajouter</button>

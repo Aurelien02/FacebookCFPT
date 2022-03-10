@@ -37,7 +37,21 @@
         <div id="posts" >
           <?php
           showPost();
+          // TODO Créer une modale personnalisée avec l'id du post pour chaque post  
           ?>
+          <!-- Début modal -->
+          <div id="modal-js-example" class="modal">
+          <div class="modal-background"></div>
+
+          <div class="modal-content">
+            <div class="box">
+              <p>Modal JS eample</p>
+              <!-- Your content -->
+            </div>
+          </div>
+          <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+        <!-- fin modal -->
         </div>
       </div>
     </div>

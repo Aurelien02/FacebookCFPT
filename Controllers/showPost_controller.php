@@ -52,7 +52,7 @@ function showPost(){
         <button class='button is-info'>
         Modifier
         </button>
-        <button class='button is-danger'>Supprimer</button>
+        <button class='js-modal-trigger button is-danger' data-target='modal-js-example'>Supprimer</button>
         </div><br>";
     }
     echo($result);
