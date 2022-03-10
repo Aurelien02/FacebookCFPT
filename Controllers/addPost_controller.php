@@ -28,7 +28,7 @@ $moveUploadedFileOk = true;
 
 for($i = 0; $i< $arrayLength; $i++){
     $fileType = explode("/" , $_FILES["files"]["type"][$i]);
-    if($_FILES["files"]["size"][$i] <= 3000000 && $fileType[0] == "image" || $fileType[0] == "video"){
+    if($_FILES["files"]["size"][$i] <= 3000000 && $fileType[0] == "image" || $fileType[0] == "video" || $fileType[0] == "audio"){
         $arrayTemp = array();
         array_push($arrayTemp, uniqid() . $_FILES["files"]["name"][$i]);
         array_push($arrayTemp,$_FILES["files"]["type"][$i]);
@@ -83,6 +83,7 @@ if($errorMsg == ""){
                 header("Location: index.php?page=home");
             } catch (\PDOException $e){
                 //annulation de la transaction
+                error_log($e);
                 $db->rollback();
                 $errorMsg = "une erreur c'est produite";
             }

@@ -27,18 +27,23 @@ function showPost(){
         $result .= "<div class='box'><h2>" . $post["commentaire"] ."</h2>
         <br>
         <div class='columns'>";
-        foreach($MediasInfos as $media){//parcourt tous les noms récupérés
+        foreach($MediasInfos as $media){//parcourt tous les médias récupérés
             $result .= "<div class='column'>
             <div class='bd-snippet-preview'>";
-            if($media[1] == "image"){
+            if($media[1] == "image"){//check si le média est une image
                 $result .= "<figure class='image'>
                 <img src='./img/". $media[0]."'>
               </figure>
               </div></div>";
-            }else if($media[1] == "video"){
-                $result .= "<video autoplay loop>
+            }else if($media[1] == "video"){//check si le média est une vidéo
+                $result .= "<video controls autoplay loop>
                 <source src='./img/".$media[0]."'>
                 </video>
+                </div></div>";
+            }else if($media[1] == "audio"){//check si le média est un audio
+                $result .= "<audio controls>
+                <source src='./img/".$media[0]."'>
+                </audio>
                 </div></div>";
             }
         }
