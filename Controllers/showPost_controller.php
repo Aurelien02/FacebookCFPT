@@ -15,7 +15,7 @@ function showPost(){
 
     foreach($allPosts as $post){// parcourt tous les posts
         $idPost = $post["idPost"];//récupère l'id du post
-        foreach($allMedias as $media){//parcour tous les media
+        foreach($allMedias as $media){//parcourt tous les médias
             if($idPost == $media["POST_idPost"]){//vérifie si la clé étrangère correspond à l'id du post
                 array_push($NamesMedias, $media["nomMedia"]);//ajoute son nom dans un tableau
             }
