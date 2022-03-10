@@ -28,7 +28,7 @@ $moveUploadedFileOk = true;
 
 for($i = 0; $i< $arrayLength; $i++){
     $fileType = explode("/" , $_FILES["files"]["type"][$i]);
-    if($_FILES["files"]["size"][$i] <= 3000000 && $fileType[0] == "image"){
+    if($_FILES["files"]["size"][$i] <= 3000000 && $fileType[0] == "image" || $fileType[0] == "video"){
         $arrayTemp = array();
         array_push($arrayTemp, uniqid() . $_FILES["files"]["name"][$i]);
         array_push($arrayTemp,$_FILES["files"]["type"][$i]);
