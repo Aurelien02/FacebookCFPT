@@ -65,7 +65,7 @@ function showPost(){
                 <div class='column is-half is-offset-one-quarter has-text-centered'>
                   <p>Êtes vous sûr de vouloir supprimer le post ?</p>
                   <!-- Your content -->
-                  <button class='button is-danger'>Supprimer</button>
+                  <button class='button is-danger' href='index.php?page=delPost&idPost=".$idPost."'>Supprimer</button>
                 </div>
               </div>
             </div>

@@ -36,27 +36,8 @@
         </div>
         <div id="posts" >
           <?php
-          showPost();
-          // TODO Créer une modale personnalisée avec l'id du post pour chaque post  
+          showPost();  
           ?>
-          <!-- Début modal -->
-          <div id="modal-js-example" class="modal">
-          <div class="modal-background"></div>
-
-          <div class="modal-content">
-            <div class="box">
-              <div class="columns">
-                <div class="column is-half is-offset-one-quarter has-text-centered">
-                  <p>Êtes vous sûr de vouloir supprimer le post ?</p>
-                  <!-- Your content -->
-                  <button class="button is-danger">Supprimer</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button class="modal-close is-large" aria-label="close"></button>
-        </div>
-        <!-- fin modal -->
         </div>
       </div>
     </div>

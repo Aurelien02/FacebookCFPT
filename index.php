@@ -14,10 +14,13 @@ switch ($page) {
     case "home":
             require("./Views/home.php");
         break;
-        case "post":
-            require("./Views/post.php");
-            require_once ("./Controllers/addPost_controller.php");
-        break;
+    case "post":
+        require("./Views/post.php");
+        require_once ("./Controllers/addPost_controller.php");
+    break;
+    case "delPost":
+        require_once("./Controllers/delPost_controller.php");
+    break;
 }
 
 require_once ("./Views/footer.php");
