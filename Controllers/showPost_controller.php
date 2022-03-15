@@ -12,6 +12,7 @@ function showPost(){
 
     $MediasInfos = array();
     $result ="";
+    $modalResult = "";
 
     foreach($allPosts as $post){// parcourt tous les posts
         $idPost = $post["idPost"];//récupère l'id du post
@@ -52,9 +53,28 @@ function showPost(){
         <button class='button is-info'>
         Modifier
         </button>
-        <button class='js-modal-trigger button is-danger' data-target='modal-js-example'>Supprimer</button>
+        <button class='js-modal-trigger button is-danger' data-target='delPost".$idPost."'>Supprimer</button>
         </div><br>";
+        $modalResult .= "
+        <div id='delPost".$idPost."' class='modal'>
+          <div class='modal-background'></div>
+
+          <div class='modal-content'>
+            <div class='box'>
+              <div class='columns'>
+                <div class='column is-half is-offset-one-quarter has-text-centered'>
+                  <p>Êtes vous sûr de vouloir supprimer le post ?</p>
+                  <!-- Your content -->
+                  <button class='button is-danger'>Supprimer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class='modal-close is-large' aria-label='close'></button>
+        </div>
+        ";
     }
     echo($result);
+    echo($modalResult);
 }
 ?>

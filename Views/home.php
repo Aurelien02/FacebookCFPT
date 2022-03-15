@@ -45,8 +45,13 @@
 
           <div class="modal-content">
             <div class="box">
-              <p>Modal JS eample</p>
-              <!-- Your content -->
+              <div class="columns">
+                <div class="column is-half is-offset-one-quarter has-text-centered">
+                  <p>Êtes vous sûr de vouloir supprimer le post ?</p>
+                  <!-- Your content -->
+                  <button class="button is-danger">Supprimer</button>
+                </div>
+              </div>
             </div>
           </div>
           <button class="modal-close is-large" aria-label="close"></button>
