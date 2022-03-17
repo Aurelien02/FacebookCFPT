@@ -19,6 +19,7 @@ switch ($page) {
         require_once ("./Controllers/addPost_controller.php");
     break;
     case "delPost":
+        error_log("delPost");
         require_once("./Controllers/delPost_controller.php");
     break;
 }

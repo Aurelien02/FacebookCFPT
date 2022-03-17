@@ -16,6 +16,15 @@ class mediaDAO{
         return $result;
     }
 
+    public static function getAllMediaByIdPost($idPost){
+        $db = DBConnection::getConnection();
+        $sql = "SELECT nomMedia FROM `db_facebookCFPT`.`MEDIA` WHERE POST_idPost = '$idPost'";
+        $q = $db->prepare($sql);
+        $q->execute();
+        $result = $q->fetchAll();
+        return $result;
+    }
+
     public static function addImage($type, $nom, $idPost){
         $db = DBConnection::getConnection();
         $sql = "INSERT INTO `db_facebookCFPT`.`MEDIA` (`typeMedia`,`nomMedia`,`creationDate`,`modificationDate`,`POST_idPost`) VALUES (:typeMedia, :nom, :dateCreation, NULL, :idPost)";

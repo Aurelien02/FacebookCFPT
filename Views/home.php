@@ -1,7 +1,11 @@
   <?php
   
   require_once("./Controllers/showPost_controller.php");
-  
+  $msg; 
+  if(isset($_SESSION['error'])){
+    $msg = $_SESSION['error'];
+    $_SESSION['error'] = "";
+  }
   ?>
   <section class="section" id="section">
     <div class="columns">
@@ -34,6 +38,15 @@
         <div class="box" style="text-align: center;">
           <b>Bienvenue !</b>
         </div>
+        <?php 
+        if(!empty($msg)){// vérifie que le message ne soit pas vide puis si c'est le cas affiche le message d'erreur 
+        ?>
+          <div class="box" style="text-align: center;">
+          <b><?=$msg?></b>
+          </div>
+        <?php
+        }
+        ?>
         <div id="posts" >
           <?php
           showPost();  

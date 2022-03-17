@@ -55,6 +55,7 @@ function showPost(){
         </button>
         <button class='js-modal-trigger button is-danger' data-target='delPost".$idPost."'>Supprimer</button>
         </div><br>";
+        //Ajout des modals de suppression pour chaques posts
         $modalResult .= "
         <div id='delPost".$idPost."' class='modal'>
           <div class='modal-background'></div>
@@ -65,7 +66,9 @@ function showPost(){
                 <div class='column is-half is-offset-one-quarter has-text-centered'>
                   <p>Êtes vous sûr de vouloir supprimer le post ?</p>
                   <!-- Your content -->
-                  <button class='button is-danger' href='index.php?page=delPost&idPost=".$idPost."'>Supprimer</button>
+                  <a href='index.php?page=delPost&idPost=".$idPost."'>
+                  <button class='button is-danger'>Supprimer</button>
+                  </a>
                 </div>
               </div>
             </div>

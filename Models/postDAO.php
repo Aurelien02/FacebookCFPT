@@ -26,6 +26,13 @@ class postDAO{
         ));
     }
 
+    public static function deletePost($idPost){
+        $db = DBConnection::getConnection();
+        $sql = "DELETE FROM POST WHERE idPost = '$idPost'";
+        $q = $db->prepare($sql);
+        $q->execute();
+    }
+
     public static function selectLastId(){
         $db = DBConnection::getConnection();
         $sql = "SELECT LAST_INSERT_ID()";
