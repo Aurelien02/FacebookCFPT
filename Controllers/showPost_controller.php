@@ -27,9 +27,9 @@ function showPost(){
         }
         $result .= "<div class='box'><h2>" . $post["commentaire"] ."</h2>
         <br>
-        <div class='columns'>";
+        <div class='row columns is-multiline'>";
         foreach($MediasInfos as $media){//parcourt tous les médias récupérés
-            $result .= "<div class='column'>
+            $result .= "<div class='column is-4'>
             <div class='bd-snippet-preview'>";
             if($media[1] == "image"){//check si le média est une image
                 $result .= "<figure class='image'>
