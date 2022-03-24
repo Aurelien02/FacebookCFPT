@@ -50,9 +50,11 @@ function showPost(){
         }
         $MediasInfos = array();
         $result .= "</div>
-        <button class='button is-info'>
+        <a href='index.php?page=modifyPost&idPost=".$idPost."'>
+        <button class='button is-info' >
         Modifier
         </button>
+        </a>
         <button class='js-modal-trigger button is-danger' data-target='delPost".$idPost."'>Supprimer</button>
         </div><br>";
         //Ajout des modals de suppression pour chaques posts

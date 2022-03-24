@@ -12,7 +12,7 @@ $idPost = $_GET['idPost'];//Récupère l'id du post dans l'url
 if(!empty($idPost)){// vérifie que l'id du post aie bien été récupéré
     $db = DBConnection::getConnection();
     try{
-        $allMediasFromPost = mediaDAO::getAllMediaByIdPost($idPost);
+        $allMediasFromPost = mediaDAO::getAllMediasNameByIdPost($idPost);
         //Début transaction
         $db->beginTransaction();
         //Suppression du post

@@ -16,6 +16,15 @@ class postDAO{
         return $result;
     }
 
+    public static function getPostById($id){
+        $db = DBConnection::getConnection();
+        $sql = "SELECT * FROM `db_facebookCFPT`.`POST` WHERE idPost IN ('$id')";
+        $q = $db->prepare($sql);
+        $q->execute();
+        $result = $q->fetchAll();
+        return $result;
+    }
+
     public static function addPost($commentaire){
         $db = DBConnection::getConnection();
         $sql = "INSERT INTO `db_facebookCFPT`.`POST` (`commentaire`, `creationDate`, `modificationDate`) VALUES (:commentaire, :dateCreation, NULL)";
