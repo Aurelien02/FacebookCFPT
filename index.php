@@ -22,6 +22,9 @@ switch ($page) {
         error_log("delPost");
         require_once("./Controllers/delPost_controller.php");
     break;
+    case "delMedia":
+        require_once ("./Controllers/delMedia_controller.php");
+    break;
     case "modifyPost":
         require("./Views/modifyPost.php");
     break;

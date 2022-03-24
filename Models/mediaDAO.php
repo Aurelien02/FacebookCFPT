@@ -45,5 +45,12 @@ class mediaDAO{
             'idPost' => $idPost
         ));
     }
+
+    public static function deleteMediaById($idMedia){
+        $db = DBConnection::getConnection();
+        $sql = "DELETE FROM MEDIA WHERE idMedia = '$idMedia'";
+        $q = $db->prepare($sql);
+        $q->execute();
+    }
 }
 ?>

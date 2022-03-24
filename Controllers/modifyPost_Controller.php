@@ -44,7 +44,7 @@ function showMedias(){
                 <div class='column is-half is-offset-one-quarter has-text-centered'>
                   <p>Êtes vous sûr de vouloir supprimer le média ?</p>
                   <!-- Your content -->
-                  <a href='index.php?page=delMedia&idMedia=".$media['idMedia']."&idPost=".$idPost."'>
+                  <a href='index.php?page=delMedia&idMedia=".$media['idMedia']."&nameMedia=".$media['nomMedia']."&idPost=".$idPost."'>
                   <button class='button is-danger'>Supprimer</button>
                   </a>
                 </div>
