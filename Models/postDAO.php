@@ -35,6 +35,13 @@ class postDAO{
         ));
     }
 
+    public static function updateCommentaryById($id,$commentary){
+        $db = DBConnection::getConnection();
+        $sql = "UPDATE db_facebookCFPT.POST SET commentaire ='$commentary' WHERE idPost IN ('$id')";
+        $q = $db->prepare($sql);
+        $q->execute();
+    }
+
     public static function deletePost($idPost){
         $db = DBConnection::getConnection();
         $sql = "DELETE FROM POST WHERE idPost = '$idPost'";

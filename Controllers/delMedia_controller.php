@@ -22,7 +22,7 @@ if(!empty($idMedia)){
         $path = "./img/";
         $path .= $nameMedia;
         unlink($path);//fonction de suppression
-        header("Location: index.php?page=modifyPost&idPost=.$idPost.");
+        header("Location: index.php?page=modifyPost&idPost=$idPost");
     }catch(PDOException $e){
         //annulation de la transaction
         error_log($e);

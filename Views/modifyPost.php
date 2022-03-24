@@ -1,9 +1,16 @@
 <?php
 require_once("./Controllers/modifyPost_Controller.php");
+require_once ("./Models/postDAO.php");
+
+use FacebookCFPT\models\postDAO;
+
 $msg; 
   if(isset($_SESSION['error'])){
     $msg = $_SESSION['error'];
   }
+  $idPost = $_GET['idPost'];
+$post = postDAO::getPostById($idPost);
+$commentary = $post[0]['commentaire'];
 ?>
 <section class="section" id="section">
    <div class="columns">
@@ -13,7 +20,7 @@ $msg;
          <div class="field">
            <label class="label">Commentaire</label>
            <div class="control">
-             <input class="input" type="textarea" id="commentary" name="commentary">
+             <input class="input" type="textarea" id="commentary" name="commentary" value="<?= $commentary?>">
            </div>
          </div>
          <div class="field">
